@@ -39,7 +39,7 @@ span {
   padding-left: 0;
   text-align: left;
 }
-.task-item {
+li{
   list-style: none;
   display: flex;
   justify-content: space-between;

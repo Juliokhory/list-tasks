@@ -30,7 +30,7 @@ function addTask(e) {
 }
 
 function completeTask() {
-    this.parentNode.classList.add('complete');
+    this.parentNode.classList.toggle('complete');
     var pid = this.parentNode;
     var idl = pid.getAttribute('nid');
     for (var j = 0; j < inbox.tasks.length; j++) {

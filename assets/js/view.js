@@ -4,7 +4,6 @@
 function printTask(name,nid){
 
     var taskLi = document.createElement('li');
-    taskLi.classList.add('task-item');
     taskLi.setAttribute('nid',nid)
 
     var taskCheckbox = document.createElement('input');

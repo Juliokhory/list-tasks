@@ -94,7 +94,7 @@ function addTask(e) {
 }
 
 function completeTask() {
-    this.parentNode.classList.add('complete');
+    this.parentNode.classList.toggle('complete');
     var pid = this.parentNode;
     var idl = pid.getAttribute('nid');
     for (var j = 0; j < inbox.tasks.length; j++) {
@@ -135,7 +135,6 @@ newTaskEl.addEventListener('keyup', addTask);
 function printTask(name, nid) {
 
     var taskLi = document.createElement('li');
-    taskLi.classList.add('task-item');
     taskLi.setAttribute('nid', nid);
 
     var taskCheckbox = document.createElement('input');
