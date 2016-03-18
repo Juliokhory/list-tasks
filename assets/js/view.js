@@ -12,11 +12,13 @@ function printTask(name,nid){
     taskCheckbox.addEventListener('change',completeTask)
 
     var taskEl = document.createElement('span');
+    taskEl.classList.add('name-task');
     taskEl.setAttribute('contenteditable','')
     taskEl.textContent = name;
+    taskEl.addEventListener('blur',editTask)
 
     var taskRemove = document.createElement('a');
-    taskRemove.textContent = 'eliminar';
+    taskRemove.textContent = 'X';
     taskRemove.classList.add('linkremove');
     taskRemove.addEventListener('click',removeTask);
     taskRemove.href = "";
@@ -27,7 +29,4 @@ function printTask(name,nid){
 
     taskList.appendChild(taskLi);
 
-    editTask();
-    //removeTask();
-    //completeTask();
 }
