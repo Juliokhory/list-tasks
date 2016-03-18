@@ -13,7 +13,11 @@ class Task {
     }
 
     complete(){
-        this.isComplete=true;
+        if(this.isComplete == true){
+            this.isComplete=false;
+        }else{
+            this.isComplete=true;
+        }
     }
 }
 

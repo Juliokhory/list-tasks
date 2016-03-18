@@ -31,60 +31,27 @@ function addTask(e) {
 }
 
 function completeTask() {
-    var list = arguments.length <= 0 || arguments[0] === undefined ? inbox : arguments[0];
-
-    var listItems = taskList.children;
-
-    var _loop = function _loop(i) {
-        listItems[i].querySelector('input').addEventListener('change', function () {
-            listItems[i].querySelector('input').classList.add('dnone');
-            listItems[i].querySelector('p').classList.remove('taskcomplete');
-            var nid = listItems[i].getAttribute('nid');
-            for (var j = 0; j < list.tasks.length; j++) {
-                if (list.tasks[j].id == nid) {
-                    list.tasks[j].complete();
-                }
-            }
-            if (listItems[i].querySelector('input').checked) {
-                listItems[i].classList.add('complete');
-            } else {
-                listItems[i].classList.remove('complete');
-            }
-        });
-    };
-
-    for (var i = 0; i < listItems.length; i++) {
-        _loop(i);
+    var pid = this.parentNode;
+    var idl = pid.getAttribute('nid');
+    console.log(idl);
+    for (var j = 0; j < inbox.tasks.length; j++) {
+        if (inbox.tasks[j].id == idl) {
+            inbox.tasks[j].complete();
+        }
     }
 }
 
-function removeTask() {
-    var list = arguments.length <= 0 || arguments[0] === undefined ? inbox : arguments[0];
+function removeTask(e) {
+    e.preventDefault();
+    var pid = this.parentNode.getAttribute('nid');
+    console.log(pid);
 
-    var listItems = taskList.children;
-
-    var _loop2 = function _loop2(i) {
-        listItems[i].querySelector('a').addEventListener('click', function (e) {
-            e.preventDefault();
-
-            var nid = listItems[i].getAttribute('nid');
-            this.parentElement.remove();
-
-            console.log(nid);
-            for (var j = 0; j < list.tasks.length; j++) {
-                if (list.tasks[j].id == nid) {
-                    nid = list.tasks[j].id;
-                    var ad = list.tasks[j];
-                    list.removeTask(j);
-                    console.log(ad);
-                }
-            }
-        });
-    };
-
-    for (var i = 0; i < listItems.length; i++) {
-        _loop2(i);
+    for (var j = 0; j < inbox.tasks.length; j++) {
+        if (inbox.tasks[j].id == pid) {
+            inbox.removeTask(j);
+        }
     }
+    this.parentNode.remove();
 }
 
 function editTask() {
@@ -92,7 +59,7 @@ function editTask() {
 
     var listItems = taskList.children;
 
-    var _loop3 = function _loop3(i) {
+    var _loop = function _loop(i) {
         listItems[i].querySelector('span').addEventListener('click', function () {
             var nameTask = listItems[i].querySelector('span').textContent;
             console.log(nameTask);
@@ -105,7 +72,7 @@ function editTask() {
     };
 
     for (var i = 0; i < listItems.length; i++) {
-        _loop3(i);
+        _loop(i);
     }
 
     for (var _i = 0; _i < listItems.length; _i++) {

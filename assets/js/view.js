@@ -3,16 +3,13 @@
  */
 function printTask(name,nid){
 
-    var taskComplete = document.createElement('p');
-    taskComplete.classList.add('taskcomplete')
-    taskComplete.textContent='Tarea Completada';
-
     var taskLi = document.createElement('li');
     taskLi.classList.add('task-item');
     taskLi.setAttribute('nid',nid)
 
     var taskCheckbox = document.createElement('input');
     taskCheckbox.type = 'checkbox';
+    taskCheckbox.addEventListener('change',completeTask)
 
     var taskEl = document.createElement('span');
     taskEl.setAttribute('contenteditable','')
@@ -21,9 +18,9 @@ function printTask(name,nid){
     var taskRemove = document.createElement('a');
     taskRemove.textContent = 'eliminar';
     taskRemove.classList.add('linkremove');
+    taskRemove.addEventListener('click',removeTask);
     taskRemove.href = "";
 
-    taskLi.appendChild(taskComplete);
     taskLi.appendChild(taskCheckbox);
     taskLi.appendChild(taskEl);
     taskLi.appendChild(taskRemove);
@@ -31,6 +28,6 @@ function printTask(name,nid){
     taskList.appendChild(taskLi);
 
     editTask();
-    completeTask();
-    removeTask();
+    //removeTask();
+    //completeTask();
 }

@@ -24,7 +24,11 @@ var Task = (function () {
     }, {
         key: "complete",
         value: function complete() {
-            this.isComplete = true;
+            if (this.isComplete == true) {
+                this.isComplete = false;
+            } else {
+                this.isComplete = true;
+            }
         }
     }]);
 

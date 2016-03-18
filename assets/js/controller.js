@@ -28,49 +28,32 @@ function addTask(e, list = inbox){
     }
 }
 
-function completeTask(list = inbox){
-    var listItems = taskList.children;
-    for(let i = 0; i < listItems.length; i++){
-        listItems[i].querySelector('input').addEventListener('change',()=>{
-            listItems[i].querySelector('input').classList.add('dnone');
-            listItems[i].querySelector('p').classList.remove('taskcomplete');
-            var nid  = listItems[i].getAttribute('nid');
-            for(let j = 0;j < list.tasks.length; j++){
-                if(list.tasks[j].id == nid){
-                    list.tasks[j].complete();
-                }
-            }
-            if(listItems[i].querySelector('input').checked){
-                listItems[i].classList.add('complete');
-            }else {
-                listItems[i].classList.remove('complete');
-            }
-        })
+function completeTask(){
+    var pid = this.parentNode;
+    var idl = pid.getAttribute('nid');
+        console.log(idl);
+    for(let j = 0; j < inbox.tasks.length; j++){
+        if(inbox.tasks[j].id == idl){
+            inbox.tasks[j].complete();
+        }
     }
 }
 
 
-function removeTask(list = inbox){
-    var listItems = taskList.children;
-    for(let i = 0; i < listItems.length; i++){
-        listItems[i].querySelector('a').addEventListener('click', function (e){
-            e.preventDefault();
+function removeTask(e){
+    e.preventDefault();
+    var pid  = this.parentNode.getAttribute('nid');
+    console.log(pid);
 
-            var nid  = listItems[i].getAttribute('nid');
-            this.parentElement.remove();
-
-            console.log(nid);
-            for(let j = 0; j < list.tasks.length; j++){
-                if(list.tasks[j].id == nid){
-                    nid= list.tasks[j].id;
-                    var ad = list.tasks[j];
-                    list.removeTask(j);
-                    console.log(ad);
-                }
-            }
-        })
+    for(let j = 0; j < inbox.tasks.length; j++){
+        if(inbox.tasks[j].id == pid){
+            inbox.removeTask(j);
+        }
     }
+    this.parentNode.remove();
+
 }
+
 
 function editTask(list = inbox){
     var listItems = taskList.children;
