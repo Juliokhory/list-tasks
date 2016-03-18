@@ -523,6 +523,7 @@
         <item url="file://$PROJECT_DIR$/node_modules/gulp-stylus/node_modules/stylus/node_modules/glob/node_modules/inherits/inherits_browser-compiled-compiled.js" />
         <item url="file://$PROJECT_DIR$/node_modules/gulp-stylus/node_modules/accord/node_modules/lodash/fp/intersection-compiled-compiled.js" />
         <item url="file://$PROJECT_DIR$/node_modules/gulp-stylus/node_modules/through2/node_modules/readable-stream/lib/_stream_readable-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/dom-version/list-compiled.js" />
         <item url="file://$PROJECT_DIR$/gulpfile-compiled.js" />
         <item url="file://$PROJECT_DIR$/assets/js/model-compiled.js" />
         <item url="file://$PROJECT_DIR$/js/model-compiled.js" />
@@ -2256,6 +2257,7 @@
       <root url="file://$PROJECT_DIR$/node_modules/gulp-stylus/node_modules/stylus/node_modules/glob/node_modules/inherits/inherits_browser-compiled-compiled.js" />
       <root url="file://$PROJECT_DIR$/node_modules/gulp-stylus/node_modules/accord/node_modules/lodash/fp/intersection-compiled-compiled.js" />
       <root url="file://$PROJECT_DIR$/node_modules/gulp-stylus/node_modules/through2/node_modules/readable-stream/lib/_stream_readable-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/dom-version/list-compiled.js" />
       <root url="file://$PROJECT_DIR$/gulpfile-compiled.js" />
       <root url="file://$PROJECT_DIR$/assets/js/model-compiled.js" />
       <root url="file://$PROJECT_DIR$/js/model-compiled.js" />
