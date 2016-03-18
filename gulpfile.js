@@ -4,6 +4,7 @@
 const gulp = require('gulp');
 const babel = require('gulp-babel');
 const stylus = require('gulp-stylus');
+var concat = require('gulp-concat');
 
 gulp.task('es6', function (){
     return gulp.src('./assets/js/*.js')
@@ -19,7 +20,14 @@ gulp.task('styles', function(){
         .pipe(gulp.dest('./css/'))}
 );
 
+gulp.task('scripts', function() {
+    return gulp.src(['./assets/js/model.js','./assets/js/controller.js','./assets/js/view.js'])
+        .pipe(concat('main.js'))
+        .pipe(gulp.dest('./js/'));
+});
+
 gulp.task('default', function(){
    gulp.watch('./assets/js/*.js',['es6']);
    gulp.watch('./assets/css/*.styl',['styles']);
+   gulp.watch(['./assets/js/model.js','./assets/js/controller.js','./assets/js/view.js'],['scripts']);
 });
