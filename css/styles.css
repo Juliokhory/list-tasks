@@ -1,0 +1,40 @@
+body {
+  text-align: center;
+  background: #f0f8ff;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: #87ceeb;
+}
+p {
+  color: #6495ed;
+}
+.contenedor {
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.list {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+}
+.task-item {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+.complete {
+  background: #87cefa;
+}
+.linkremove {
+  margin: 0 0 0 53px;
+  color: #8b0000;
+}
+.dnone {
+  display: none;
+}
+.taskcomplete {
+  display: none;
+}
