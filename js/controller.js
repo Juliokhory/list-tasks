@@ -16,11 +16,13 @@ function addTask(e) {
         if (inbox.tasks.length == 0) {
             var newTask = new Task(this.value, ultId);
             inbox.addTask(newTask);
+            console.table(inbox.tasks);
         } else {
             var posArr = inbox.tasks.length - 1;
             ultId = inbox.tasks[posArr].id + 1;
             var newTask = new Task(this.value, ultId);
             inbox.addTask(newTask);
+            console.table(inbox.tasks);
         }
         printTask(this.value, ultId);
         this.value = "";
@@ -31,12 +33,12 @@ function completeTask() {
     this.parentNode.classList.add('complete');
     var pid = this.parentNode;
     var idl = pid.getAttribute('nid');
-    console.log(idl);
     for (var j = 0; j < inbox.tasks.length; j++) {
         if (inbox.tasks[j].id == idl) {
             inbox.tasks[j].complete();
         }
     }
+    console.table(inbox.tasks);
 }
 
 function removeTask(e) {
@@ -45,6 +47,7 @@ function removeTask(e) {
     for (var j = 0; j < inbox.tasks.length; j++) {
         if (inbox.tasks[j].id == pid) {
             inbox.removeTask(j);
+            console.table(inbox.tasks);
         }
     }
     this.parentNode.remove();
@@ -52,10 +55,10 @@ function removeTask(e) {
 
 function editTask() {
     var pid = this.parentNode.getAttribute('nid');
-    console.log(pid);
     for (var i = 0; i < inbox.tasks.length; i++) {
         if (inbox.tasks[i].id == pid) {
             inbox.tasks[i].edit(this.parentNode.querySelector('span').textContent);
+            console.table(inbox.tasks);
         }
     }
 }
